@@ -5,19 +5,20 @@
 
 /* Example of Destructing module or  selective import */
 /*getIdDone : gotItDone ; here we are using gotItDone as an alias for getIdDone */
-const {doSomething, getIdDone: gotItDone} = require('./first-module');
-doSomething();
+//const {doSomething, getIdDone: gotItDone} = require('./first-module');
+//doSomething();
 //getIdDone();
-gotItDone();
+//gotItDone();
 
 
 /*Testing singleton Modules It means no mater how many times you require a particular module 
 its the same copy we can share data between two*/
-/*const firstMod1 = require('./first-module');
+const firstMod1 = require('./first-module');
 const firstMod2 = require('./first-module');
 
-console.log(firstMod1 === firstMod2);*/
-
+console.log(firstMod1 === firstMod2);
+firstMod1.put("Test data");
+console.log(firstMod2.get());
 
 /*const configurable = require('./configurable-module');
 
